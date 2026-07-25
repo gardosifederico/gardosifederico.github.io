@@ -1,0 +1,192 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --primary: #0057a8;
+    --border: #e5e7eb;
+    --radius: 18px;
+    --shadow: 0 6px 18px rgba(0,0,0,0.06);
+    --max-width: 980px;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.2rem 4rem;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid var(--primary);
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 2.3rem;
+}
+
+.job-title {
+    margin-top: 0.35rem;
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.hero-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.hero-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   INTRO
+========================= */
+.intro {
+    margin: 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border-left: 5px solid var(--primary);
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+section h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.7rem;
+}
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+.experience-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.company {
+    margin: 0.25rem 0 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.exp-period {
+    white-space: nowrap;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.exp-location {
+    margin: 0 0 1rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.exp-description {
+    margin-bottom: 0.8rem;
+}
+
+.exp-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.exp-list li {
+    margin-bottom: 0.35rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-links {
+        justify-content: center;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
