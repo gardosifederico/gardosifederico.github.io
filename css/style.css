@@ -258,12 +258,16 @@ section h2 {
     box-shadow:var(--shadow);
 }
 
-.copernicus {
-    grid-column: 2 / 12;
+.esail {
+    grid-column: 6 / 13;
 }
 
-.galileo {
-    grid-column: 5 / 13;
+.D3S {
+    grid-column: 1 / 3;
+}
+
+.NAVRAD {
+    grid-column: 1 / 3;
 }
 
 /* =========================
