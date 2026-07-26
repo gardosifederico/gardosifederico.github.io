@@ -317,6 +317,82 @@ section h2 {
    MISSIONS
 ========================= */
 
+/* ==========================================
+   PERSONAL PROJECTS
+========================================== */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.project-card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:0.25s;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.project-content{
+
+    padding:24px;
+
+}
+
+.project-content h2{
+
+    margin-top:0;
+
+    margin-bottom:12px;
+
+    color:var(--primary);
+
+}
+
+.project-content p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -347,5 +423,5 @@ section h2 {
 }
 
 body{
-    background:rgb(0, 140, 255);
+    background:rgb(0, 217, 255);
 }
