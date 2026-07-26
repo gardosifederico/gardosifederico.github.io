@@ -200,6 +200,14 @@ section h2 {
 
 }
 
+.copernicus {
+    grid-column: 2 / 12;
+}
+
+.galileo {
+    grid-column: 5 / 13;
+}
+
 /* =========================
    FOOTER
 ========================= */
