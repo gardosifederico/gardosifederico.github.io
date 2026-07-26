@@ -258,6 +258,52 @@ section h2 {
     box-shadow:var(--shadow);
 }
 
+.mission-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(13,1fr);
+
+    gap:10px;
+
+    margin:18px 0;
+
+}
+
+.mission{
+
+    margin:20px 0;
+
+}
+
+.mission-name{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.mission-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(13,1fr);
+
+    gap:10px;
+
+}
+
+.mission-bar{
+
+    height:24px;
+
+    background:#2ecc71;
+
+    border-radius:12px;
+
+}
+
 .esail {
     grid-column: 6 / 13;
 }
