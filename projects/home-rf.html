@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home RF Receiving Station</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- HEADER / HERO -->
+        <header class="hero">
+            <div class="hero-photo">
+                <img src="../assets/images/home-rf.jpeg">
+            </div>
+            <div class="hero-text">
+                <h1>Home RF Station</h1>
+            </div>
+        </header>
+
+        <!-- BREVE INTRO (opzionale) -->
+        <section class="intro">
+            <p>
+                Project started to gain knowledge in Radio Frequeny domain, together with the experience gained working for
+                AIS and RF Geolocation missions.
+            </p>
+        </section>
+
+        <!-- ESPERIENZA -->
+        <section id="experience">
+            <h2>Design Objectives</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    - The System shall be accessible with username and permissions.<br>
+                    - The System shall be accessible outside of the home LAN, without using Port Forwarding.<br>
+                    - The System shall be constantly monitored (Temperature and CPU load).<br>
+                    - The System shall detect and decode AIS messages. <br>
+                    - The System shall disply on a map the tracked signals. <br>
+                    - The System shall support and feed AIS Database available online. <br>
+                    - The System shall detect and decode ADSB messages. <br>
+                    - The system shall display on a map the tracked signals <br>
+                    - The System shall support and feed FlightRadar24 (to obtain the Contributor account).<br>
+                    - The System should also be capable of detecting ATC messages.<br>
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+        
+        <!-- ESPERIENZA -->
+        <section id="experience">
+            <h2>HW Architecture</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    - Rasperry PI 5, 4GB RAM<br>
+                    - 3x Software Defined Radio<br>
+                    - ADSB Dedicated 1090 MHz Antenna<br>
+                    - 2x Antennas (VHF range)<br>
+                    - USB Powered Hub<br>
+                    - Low Noise Amplifier<br>
+                    - ATC Bandpass filter<br>
+
+                    The Hardware is connected as listed:<br>
+
+                    Pi 5 - Powered USB Hub - SDR - SMA Cable - AIS Antenna (1m long)<br>
+                    Pi 5 - SDR - Filter - ATC Antenna (60cm long)<br>
+                    Pi 5 - Powered USB Hub - SDR - SMA Cable - LNA - ADSB Antenna (1090 MHz)<br>
+                    
+                    <br>LNA can be moved in any receiving chain, but the highest gain in performance is within the ADSB Reception.<br>
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+
+        <section id="experience">
+            <h2>SW Architecture</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    - DebianOS (for the Pi 4)<br>
+                    - nginx<br>
+                    - Tailscale<br>
+                    - AIS-catcher<br>
+                    - Orbit Sailor forwarder<br>
+                    - Python (Pyais)<br>
+                    - readsb<br>
+                    - flightradar24 feeder<br>
+                    - tar1090<br>
+                    - rtl_airband<br>
+
+                    <br><strong>AIS</strong><br>
+                    AIS Chain is handled with <i>systemd</i> processes. AIS-Catcher is a free SW that is available to read the AIS messages received with the SDR.
+                    AIS-Catcher allows to regulate the gain and centre frequencies to maximize the messages reception.<br>
+                    AIS-Catcher is run with several outputs:<br>
+                    - port 8080 is standard to receive a visualization of the messages received with statistics automatically computed.<br>
+                    - Pi Memory for post processing<br>
+                    - port 10110 for forwarding output to OrbitSailor<br>
+                    - using -X with AuthKey to include AIS-Catcher in the data chain distribution<br>
+
+                    <br>The Data received is analysed with another system process that update the AIS Messages database useful for statistics and plots.<br>
+
+                    <br><strong>ADSB</strong><br>
+                    ADSB chain is handled with <i>systemd</i> processes. readsb is a free SW that allows to decode the receive ADSB messages, and generates in output
+                    several .json files that can be post-processed for representation and statistics. readsb output is pipelined to tar1090 which is another free SW that
+                    allows immediate representation of the detected planes.<br>
+                    Automatically with cronjobs the json are also processed to extract to a Database and statistics from the receive planes are produced:<br>
+                    - Number of planes tracked (last 24 hours)<br>
+                    - Number of planes tracked (last hour)<br>
+                    - Max distance tracked (last 24 hours)<br>
+                    - Max contact duration (last 24 hours)<br>
+                    - Luxair flights and aircrafts ever tracked<br>
+                    - Cargolux flights and aircrafts ever tracked<br>
+                    - Military planes ever tracked<br>
+                    - Overall Flights per Airline (Hystogram)<br>
+                    - Hystogram of number of planes detected last 24 hours - every hour<br>
+
+                    <br>Additional statistics are produced with the usage of a free online database pingable through its api<br>
+                    <i>https://api.adsb.com</i><br>
+                    The API is fed with the DB generated which is enriched with new data on planes tracked such as:<br>
+                    - Manufacturer<br>
+                    - Aircraft type<br>
+                    - Origin Airport<br>
+                    - Destination Airport<br>
+
+                    <br><strong>ATC</strong><br>
+                    ATC chain is not continously operated and is based on shell scripts for activation and de-activation, while the post-processing is automated with a cron job.
+                    The SW used is rtl_airband which is free and allows to set up a configuration file for specyfing sample frequency, centre frequency, antenna gain etc.<br>
+                    Once the data is recorded, every hour a .mp3 file is generated and processed with <i>sox</i> to clean the audio and providing a spectrogram for immediate visualization
+                    of the file audio content.
+
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+
+        <section id="experience">
+            <h2>Health Status Monitoring</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    <br><strong>Temperature and CPU Load</strong><br>
+                    
+                    Temperature and CPU load are also monitored every minute to avoid overtemperature or overclock issues.<br>
+                    The Pi is connected to a smart plug that can be restarted remotely.
+
+                    <br>Tailscale is also used to have the Pi always accessible even outside the home network.
+                    
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+
+            <h2>Some Nice Plots</h2>
+
+        <footer class="footer">
+            <p>© 2026 Federico Gardosi</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
