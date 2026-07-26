@@ -371,7 +371,7 @@ section h2 {
 
     display:block;
 
-    max-width:70%;
+    max-width:100%;
 
     height:auto;
 
@@ -380,6 +380,24 @@ section h2 {
     box-shadow:var(--shadow);
 
     margin:25px auto;
+
+}
+
+.project-image.large{
+
+    width:100%;
+
+}
+
+.project-image.medium{
+
+    width:70%;
+
+}
+
+.project-image.small{
+
+    width:40%;
 
 }
 
