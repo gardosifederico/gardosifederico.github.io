@@ -244,3 +244,7 @@ section h2 {
         align-items: flex-start;
     }
 }
+
+body{
+    background:red;
+}
