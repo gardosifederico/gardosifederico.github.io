@@ -177,35 +177,19 @@ section h2 {
 }
 
 .milestones{
-
     display:flex;
-
-    flex-wrap:wrap;
-
     gap:20px;
-
-    margin-top:30px;
-
-    align-items:stretch;
+    flex-wrap:nowrap;
+    overflow-x:auto;
 }
 
 .milestone{
-
-    flex:1;
-
-    min-width:220px;
-
-    background:#fff;
-
+    flex:0 0 180px;
+    background:white;
     border:1px solid #d8d8d8;
-
     border-radius:12px;
-
     padding:20px;
-
     text-align:center;
-
-    transition:.2s;
 }
 
 .milestone:hover{
