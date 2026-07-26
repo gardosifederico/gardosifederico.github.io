@@ -193,65 +193,79 @@ section h2 {
    MISSION TIMELINE
 ===================================== */
 
+/* =====================================
+   TIMELINE
+===================================== */
+
 .timeline{
 
-    display:grid;
-
-    grid-template-columns:220px repeat(13,1fr);
-
-    gap:12px;
-
-    align-items:center;
-
-    margin-top:40px;
+    margin-top:50px;
 
 }
 
-.phase{
+/* ---------- PHASES ---------- */
+
+.timeline>.phase{
+
+    display:inline-block;
 
     background:#dbeafe;
 
-    padding:12px;
+    padding:15px;
 
-    border-radius:10px;
-
-    text-align:center;
+    border-radius:12px;
 
     font-weight:700;
+
+    text-align:center;
 
 }
 
 .phase0{
 
-    grid-column:2 / 5;
+    width:26%;
 
 }
 
 .phaseBC{
 
-    grid-column:5 / 7;
+    width:16%;
 
 }
 
 .phaseD{
 
-    grid-column:7 / 12;
+    width:38%;
 
 }
 
 .phaseE{
 
-    grid-column:12 / 15;
+    width:18%;
 
 }
 
-.milestone{
+/* ---------- MILESTONES ---------- */
+
+.milestones{
+
+    display:grid;
+
+    grid-template-columns:repeat(13,1fr);
+
+    gap:10px;
+
+    margin:20px 0 35px;
+
+}
+
+.milestones div{
 
     background:white;
 
-    padding:14px 6px;
-
     border-radius:10px;
+
+    padding:15px 5px;
 
     text-align:center;
 
@@ -261,13 +275,33 @@ section h2 {
 
 }
 
+/* ---------- ONE MISSION ---------- */
+
 .mission-name{
 
     font-weight:600;
 
-    padding-right:20px;
+    margin-top:18px;
+
+    margin-bottom:6px;
 
 }
+
+/* timeline */
+
+.mission-track{
+
+    display:grid;
+
+    grid-template-columns:repeat(13,1fr);
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+}
+
+/* colored bar */
 
 .mission-bar{
 
