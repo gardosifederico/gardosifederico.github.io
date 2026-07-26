@@ -270,38 +270,29 @@ section h2 {
 
 }
 
-.mission{
+/* =========================
+   MISSIONS
+========================= */
 
-    margin:20px 0;
-
+.mission {
+    margin-top: 20px;
 }
 
-.mission-name{
-
-    margin-bottom:8px;
-
-    font-weight:600;
-
+.mission-name {
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.mission-row{
-
-    display:grid;
-
-    grid-template-columns:repeat(13,1fr);
-
-    gap:10px;
-
+.mission-row {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 10px;
 }
 
-.mission-bar{
-
-    height:24px;
-
-    background:#2ecc71;
-
-    border-radius:12px;
-
+.mission-bar {
+    height: 22px;
+    background: #2ecc71;
+    border-radius: 20px;
 }
 
 .esail {
