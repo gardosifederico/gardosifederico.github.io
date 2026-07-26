@@ -24,7 +24,7 @@
         <section class="intro">
             <p>
                 Concerning the everyday more frequent threats to personal data stored on big cloud servers, I have decided
-                to create my own home-NAS to have a safe and easy to manage system where to store documents and pictures.
+                to create my own home-NAS to have a safe and easy-to-manage system where to store documents and pictures.
             </p>
         </section>
 
@@ -55,7 +55,18 @@
 
             <!-- TEMPLATE DA DUPLICARE -->
                 <p class="exp-description">
-                    Lista di hardware
+                    - Rasperry PI 4, 8GB RAM<br>
+                    - 2x Hard-Drive 1 TB<br>
+                    - 2x Hard-Drive 500 GB<br>
+                    - Powered USB Hub<br>
+                    
+                    <br>Raspberry Pi 4 (8GB RAM) has been selected only because of availability. Lower RAM also allows for NAS to run flawlessly, Pi 4,
+                    nontheless, is very good for temperature management (Pi 5 heats up much faster with respect to Pi 4).<br>
+
+                    <br>The Hard-Drive also have been chose for their availability, some old memories were calling for some utilization.<br>
+
+                    <br>Powered USB Hub is needed to avoid Under-Current: by plugging 4 memories to the Pi, the Pi needed to supply more current than possible
+                    to load the memories. With the Powered USB the memories can run autonomously, and Pi does not need to provide current to them.<br>
                 </p>
 
             </article>
@@ -68,7 +79,16 @@
 
             <!-- TEMPLATE DA DUPLICARE -->
                 <p class="exp-description">
-                    Lista di Software
+                    - DebianOS (for the Pi 4)<br>
+                    - mdadm<br>
+                    - rsync<br>
+
+                    <br>mdadm allows to create and mount the real RAID (type 1) based on the memories specified in the configuration. The chose Architecture
+                    is to use the 2x 1TB memories in RAID: RAID 1 means that the allowable NAS memory storage availability will be 1 TB, each memory will be
+                    to store the same file in same path (redundancy).<br>
+
+                    <br>rsync is instead used for backing up the files in the back up memories (2x 500GB). when the 500GB memory will be exceeded it will be
+                    possible to replace them.<br>
                 </p>
 
             </article>
@@ -77,11 +97,12 @@
         </section>
 
         <section id="experience">
-            <h2>Automations</h2>
+            <h2>Automations & Operations</h2>
 
             <!-- TEMPLATE DA DUPLICARE -->
                 <p class="exp-description">
-                    Tutti gli automatismi
+                    <br>Replenishment Strategy<br>
+                    
                 </p>
 
             </article>
