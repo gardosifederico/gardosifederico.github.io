@@ -84,6 +84,7 @@
                     - rsync<br>
                     - Samba<br>
                     - Tailscale<br>
+                    - nginx
 
                     <br>mdadm allows to create and mount the real RAID (type 1) based on the memories specified in the configuration. The chose Architecture
                     is to use the 2x 1TB memories in RAID: RAID 1 means that the allowable NAS memory storage availability will be 1 TB, each memory will be
@@ -92,7 +93,10 @@
                     <br>rsync is instead used for backing up the files in the back up memories (2x 500GB). when the 500GB memory will be exceeded it will be
                     possible to replace them.<br>
 
-                    <br>Samba is the SW used to create access to the NAS with a Username and Password to perform the classic operations of file transfer.
+                    <br>Samba is the SW used to create access to the NAS with a Username and Password to perform the classic operations of file transfer.<br>
+
+                    <br>nginx is used to enable local website at the IP Address of the Pi, that is used to display the plots related to the healt status of
+                    the Pi<br>
                 </p>
 
             </article>
@@ -136,11 +140,37 @@
 
         <section id="experience">
             <h2>Some Nice Plots</h2>
-
-            <!-- TEMPLATE DA DUPLICARE -->
-                <p class="exp-description">
-                    Some nice plots
-                </p>
+            <a class="project-card">
+            <img src="../assets/images/temperature_monitoring.png">
+                <div class="project-content">
+                    <h2>Last 2h Temperatures</h2>
+                </div>
+            </a>
+            <a class="project-card">
+            <img src="../assets/images/temperature_monitoring2.png">
+                <div class="project-content">
+                    <h2>Last 4d Temperatures</h2>
+                </div>
+            </a>
+            <a class="project-card">
+            <img src="../assets/images/cpuload_monitoring.png">
+                <div class="project-content">
+                    <h2>Last 2h CPU</h2>
+                </div>
+            </a>
+            <a class="project-card">
+            <img src="../assets/images/cpuload_monitoring2.png">
+                <div class="project-content">
+                    <h2>Last 4d CPU</h2>
+                </div>
+            </a>
+            <br>
+            <a class="project-card">
+            <img src="../assets/images/memory_monitoring.png">
+                <div class="project-content">
+                    <h2>Memory Available</h2>
+                </div>
+            </a>
 
             </article>
             <!-- FINE TEMPLATE -->
