@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Display</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- HEADER / HERO -->
+        <header class="hero">
+            <div class="hero-photo">
+                <img src="../assets/images/photo-display.jpeg">
+            </div>
+            <div class="hero-text">
+                <h1>Photo Display</h1>
+            </div>
+        </header>
+
+        <!-- BREVE INTRO (opzionale) -->
+        <section class="intro">
+            <p>
+                The Home NAS stores in the Home network all Photos collected, and an old Ipad from 2013 was waiting to be used.
+            </p>
+        </section>
+
+        <!-- ESPERIENZA -->
+        <section id="experience">
+            <h2>Design Objectives</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    - The System shall disply on a dedicated website, internal to the home network, images from the NAS.<br>
+                    - The System shall be accessible outside of the home LAN, without using Port Forwarding.<br>
+                    - The photos displayed shall not be duplicated<br>
+                    - The system shall not use databases<br>
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+
+        <section id="experience">
+            <h2>HW and SW</h2>
+
+            <!-- TEMPLATE DA DUPLICARE -->
+                <p class="exp-description">
+                    - Pi 4 (used for Home NAS)<br>
+                    - Photo visualizer device (Ipad in my case)<br>
+
+                    Besides nginx no dedicated SW has been used.<br>
+
+                    Every first day of each quarter, a catalog of all images available in the NAS is generated, in the form of a JSON file.
+                    The catalog contains the filepath, album name and date. The catalog.json file is used by nginx for displaying the picture with
+                    an image change every 30s.<br>
+                    The catalog is deployed every quarter after the generation of the updated catalog, updating the catalog with the new iamges stored on
+                    the NAS, updating the images to be visualized.<br>
+                </p>
+
+            </article>
+            <!-- FINE TEMPLATE -->
+        
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Federico Gardosi</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
