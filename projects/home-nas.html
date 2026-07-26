@@ -82,6 +82,8 @@
                     - DebianOS (for the Pi 4)<br>
                     - mdadm<br>
                     - rsync<br>
+                    - Samba<br>
+                    - Tailscale<br>
 
                     <br>mdadm allows to create and mount the real RAID (type 1) based on the memories specified in the configuration. The chose Architecture
                     is to use the 2x 1TB memories in RAID: RAID 1 means that the allowable NAS memory storage availability will be 1 TB, each memory will be
@@ -89,6 +91,8 @@
 
                     <br>rsync is instead used for backing up the files in the back up memories (2x 500GB). when the 500GB memory will be exceeded it will be
                     possible to replace them.<br>
+
+                    <br>Samba is the SW used to create access to the NAS with a Username and Password to perform the classic operations of file transfer.
                 </p>
 
             </article>
@@ -101,8 +105,28 @@
 
             <!-- TEMPLATE DA DUPLICARE -->
                 <p class="exp-description">
-                    <br>Replenishment Strategy<br>
+                    <br><strong>Use of NAS outside of Home Network</strong><br>
+
+                    <br>To access the NAS services from outside the home network, Tailscale is used. Tailscale allows to create a mesh network between
+                    a limited number of devices, that can be accessed using a local IP address when activated.<br>
+
+                    <br><strong>Replenishment Strategy</strong><br>
+
+                    <br>In case of Memory HW Failure: RAID 1 can continue operating without knowing which HW is failed. mdadm will allow me to
+                    know which is the defect HW and it can be replaced with a new memory of the same size.<br>
                     
+                    <br><strong>Monitoring</strong><br>
+                    <br>Through Cron Jobs, every minute the Temperature and the CPU Load are monitored and logged in a .log file.
+                    <br>The .log file is read to perform the temperature and CPU Load Plots, and it is also archived on a dedicated folder of the NAS
+                    every Week (with indication of the Calendar week of generation). In this way the PI memory is not impacted by the size of the .log
+                    file. The archive is performed with dedicated Cron Job the first minute of each Week.<br>
+
+                    Based on the values read in the .log file a telegram bot is also used to communicate the health status of the Pi:<br>
+                    - Everyday 12.00 CEST the routine communication if no monitoring issue to reports<br>
+                    - If temperature goes above 55 Celsius immediate communication of Temperature issue via telegram <br>
+                    - If temperature goes back below 55 Celsius within 5 minutes another communication of issue resolved sent via telegram<br>
+                    - Telegram bot can perform reboot operations and request specific healt status figures of merit to help me debug the issue from the distance<br>
+                    - If CPU load goes above 10% also a monitoring alert is raised from the Telegram Bot <br>
                 </p>
 
             </article>
