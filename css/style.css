@@ -363,13 +363,23 @@ section h2 {
 
 }
 
-.project-card2 img{
+/* ==========================================
+   PROJECT IMAGES
+========================================== */
 
-    width:85%;
+.project-image{
 
-    height:160px;
+    display:block;
 
-    object-fit:cover;
+    max-width:70%;
+
+    height:auto;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow);
+
+    margin:25px auto;
 
 }
 
