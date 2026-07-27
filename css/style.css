@@ -193,6 +193,18 @@ section h2 {
    MISSION TIMELINE
 ===================================== */
 
+.timeline-wrapper{
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+
+    overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
 /* =====================================
    TIMELINE
 ===================================== */
@@ -200,6 +212,8 @@ section h2 {
 .timeline{
 
     margin-top:50px;
+
+    min-width:1200px;
 
 }
 
@@ -256,6 +270,8 @@ section h2 {
     gap:10px;
 
     margin:20px 0 35px;
+
+    white-space:nowrap;
 
 }
 
