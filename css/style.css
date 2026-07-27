@@ -189,6 +189,62 @@ section h2 {
    MISSION TIMELINE
 ========================================== */
 
+/* =========================
+   SKILLS
+========================= */
+
+.skill-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:var(--surface);
+
+    padding:14px 20px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.skill-name{
+
+    font-weight:600;
+
+}
+
+.skill-level{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.dot{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    border:2px solid var(--primary);
+
+}
+
+.dot.filled{
+
+    background:var(--primary);
+
+}
+
 /* =====================================
    MISSION TIMELINE
 ===================================== */
