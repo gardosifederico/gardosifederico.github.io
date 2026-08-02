@@ -115,19 +115,19 @@ body {
 
     align-items:center;
 
-    gap:40px;
+    gap:35px;
 
     padding:18px 30px;
 
     background:white;
 
-    border-bottom:1px solid var(--border);
+    border-radius:16px;
 
-    position:sticky;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
-    top:0;
+    margin:30px auto;
 
-    z-index:1000;
+    width:fit-content;
 
 }
 
@@ -135,17 +135,25 @@ body {
 
     text-decoration:none;
 
-    color:var(--primary);
+    color:#374151;
 
     font-weight:600;
 
-    transition:.2s;
+    font-size:1rem;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    transition:all .25s ease;
 
 }
 
 .topnav a:hover{
 
-    color:#003f7f;
+    background:var(--primary);
+
+    color:white;
 
 }
 
