@@ -165,9 +165,9 @@ body {
 
     position:fixed;
 
-    top:25px;
+    top:18px;
 
-    left:25px;
+    left:18px;
 
     display:flex;
 
@@ -214,6 +214,11 @@ section h2 {
     margin-top: 3rem;
     margin-bottom: 1.2rem;
     font-size: 1.7rem;
+}
+
+.lifecycle-title{
+    margin-top:80px;
+    margin-bottom:40px;
 }
 
 /* =========================
@@ -442,9 +447,16 @@ section h2 {
 
 .timeline{
 
-    margin-top:50px;
+    margin-top:40px;
+    margin-bottom:60px;
 
-    min-width:1200px;
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
 
