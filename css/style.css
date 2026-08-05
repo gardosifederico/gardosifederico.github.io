@@ -685,28 +685,73 @@ section h2 {
 /* =========================
    MOBILE
 ========================= */
-@media (max-width: 700px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 768px) {
+
+    .container{
+        width:100%;
+        max-width:100%;
+        padding:1rem;
     }
 
-    .hero-links {
-        justify-content: center;
+    /* HERO */
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:1.5rem;
     }
 
-    .exp-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .hero-photo img{
+        width:140px;
+        height:140px;
     }
 
+    .hero-text h1{
+        font-size:2rem;
+    }
+
+    .hero-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    /* EXPERIENCE */
+    .experience-card{
+        width:100%;
+        margin:1rem 0;
+    }
+
+    .exp-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .exp-period{
+        white-space:normal;
+    }
+
+    /* TOP NAVIGATION */
+    .topnav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        padding:10px;
+    }
+
+    .topnav a{
+        display:inline-block;
+        padding:8px 12px;
+        font-size:0.95rem;
+    }
+
+    /* PROJECT CARDS */
     .projects-grid{
-
         grid-template-columns:1fr;
-
     }
-}
 
-body{
-    background:rgb(0, 217, 255);
+    /* SKILLS */
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
 }
